@@ -11,6 +11,24 @@ export interface Offer {
   benefits: string[];
   ctaText: string;
   checkoutUrl: string;
+  
+  // Extended high-converting fields
+  preHeadline?: string;
+  problemSection?: {
+    title: string;
+    bullets: string[];
+    conclusion: string;
+  };
+  features?: {
+    iconName?: string;
+    title: string;
+    description: string;
+  }[];
+  guarantee?: {
+    title: string;
+    description: string;
+  };
+  
   testimonials?: {
     name: string;
     role: string;
@@ -107,23 +125,66 @@ export const offers: Offer[] = [
     checkoutUrl: "https://checkout.exemplo.com/produtividade"
   },
   {
-    slug: "ebook-receitas-fit",
-    title: "100 Receitas Fit Rápidas",
-    subtitle: "Coma bem sem perder horas na cozinha",
-    description: "Um e-book completo com receitas testadas e aprovadas para quem busca uma alimentação saudável, focada em ingredientes baratos e preparo em menos de 20 minutos.",
+    slug: "receitas-zero",
+    title: "Você Não Precisa Comer *Comida Sem Graça* Para Ter Uma *Vida Saudável*.",
+    subtitle: "Descubra como voltar a comer pães, bolos, tortas e doces deliciosos sem se preocupar com glúten ou açúcar refinado.",
+    description: "Um pacote completo com mais de 350 receitas sem glúten e sem açúcar para transformar a sua alimentação.",
     category: "Saúde e Bem-estar",
     imageUrl: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1200",
-    originalPrice: 67.00,
-    currentPrice: 27.00,
-    discountPercentage: 60,
-    benefits: [
-      "Receitas de até 20 minutos",
-      "Lista de compras inteligente",
-      "Opções veganas e sem glúten",
-      "Tabela nutricional completa"
+    originalPrice: 97.00,
+    currentPrice: 29.90,
+    discountPercentage: 69,
+    benefits: [], // Empty to use features instead
+    ctaText: "QUERO LIBERAR MEU ACESSO POR APENAS R$ 29,90",
+    checkoutUrl: "https://checkout.exemplo.com/receitas-zero",
+    preHeadline: "PARA QUEM DESEJA SAÚDE SEM ABRIR MÃO DO SABOR",
+    problemSection: {
+      title: "A dieta restritiva falha porque ignora o prazer.",
+      bullets: [
+        "Pratos sem sabor e com texturas estranhas.",
+        "A sensação de estar 'de castigo' na mesa e sem energia.",
+        "Ingredientes caros e difíceis de encontrar."
+      ],
+      conclusion: "Isso acaba hoje. Nós reunimos mais de 350 receitas culinárias das melhores nutricionistas para provar que uma cozinha limpa pode (e deve) ser incrivelmente saborosa, além de dois e-books bônus."
+    },
+    features: [
+      {
+        iconName: "Croissant",
+        title: "Pães e Massas Saborosas",
+        description: "Aprenda o pão camponês, pão de alho, macarrão festivo e até crepes de palmito totalmente livres de glúten."
+      },
+      {
+        iconName: "Star",
+        title: "Pizzas e Salgados",
+        description: "O segredo da massa crocante na 'Pizza sappore d'Itália', croquetes de bacalhau e deliciosas tortas-suflê."
+      },
+      {
+        iconName: "Coffee",
+        title: "Sobremesas Inesquecíveis",
+        description: "Bolo especial de maracujá, sorvete de nozes com cacau e bolo de caneca sem açúcar que derretem na boca."
+      }
     ],
-    ctaText: "Quero Emagrecer Comendo Bem",
-    checkoutUrl: "https://checkout.exemplo.com/receitas-fit"
+    testimonials: [
+      {
+        name: "Juliana Martins",
+        role: "Empreendedora",
+        content: "Achei que nunca mais comeria um bolo de verdade depois do diagnóstico. A receita de bolo de maracujá é idêntica à normal! As receitas são práticas, não exigem ingredientes caros e mudaram a minha rotina."
+      },
+      {
+        name: "Carlos Eduardo",
+        role: "Representante Comercial",
+        content: "Minha família toda começou a comer as pizzas e os crepes sem nem perceber que eram sem glúten! É muito saboroso e perdi 4kg no primeiro mês só cortando o açúcar refinado seguindo o livro."
+      },
+      {
+        name: "Mariana Costa",
+        role: "Mãe de Dois",
+        content: "A parte mais difícil para mim era o pão do café da manhã. O pão rústico desse material me salvou. Faço toda semana, os meninos adoram e eu como sem peso na consciência e sem inchaço."
+      }
+    ],
+    guarantee: {
+      title: "Risco Zero: Garantia Incondicional de 7 Dias.",
+      description: "Acesse o material, teste as receitas e prove os sabores. Se em 7 dias não gostar, devolvemos 100% do seu dinheiro."
+    }
   },
   {
     slug: "planilha-gestao-financeira",
