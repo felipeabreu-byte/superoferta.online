@@ -137,6 +137,7 @@ export const offers: Offer[] = [
     benefits: [], // Empty to use features instead
     ctaText: "QUERO LIBERAR MEU ACESSO POR APENAS R$ 29,90",
     checkoutUrl: "https://checkout.exemplo.com/receitas-zero",
+    metaPixelId: "364495056487941",
     preHeadline: "PARA QUEM DESEJA SAÚDE SEM ABRIR MÃO DO SABOR",
     problemSection: {
       title: "A dieta restritiva falha porque ignora o prazer.",
